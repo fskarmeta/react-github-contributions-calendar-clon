@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.overcontainer {
+  /* background-color: rgb(80, 255, 133); */
+  height: 10rem;
+  width: 57rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 10rem auto;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+
+
+.container {
+  margin: 5rem auto;
+  /* border: 1px solid black;
+  background-color: beige; */
+  width:57rem; 
+  height: 7.6rem;
+  display: flex;
+  flex-direction:column ;
+  flex-wrap: wrap;
+  align-self: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.day {
+background-color: rgb(218, 232, 214);
+border: 1px solid rgb(191, 190, 190, 0.2);
+border-radius: 25%;
+height: 0.7em;
+width: 0.7em;
+align-self: center;
+margin: 2px 1px;
 }
+
+
+
+
+.days {
+    /* background-color: lightcyan; */
+    height: 7.6rem;
+    width: 1.7rem;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.daystext {
+    font-family: monospace;
+ line-height: 3.5;
+ font-size: 0.8rem;
+ margin-left: 0.2rem;
+}
+
+
+.monthstext {
+  justify-content: space-around;
+    font-family: monospace;
+    position: absolute;
+    width: 54.5rem;
+    /* background-color: lightpink; */
+    display:flex;
+    margin-left: 0rem;
+    font-size: 0.8rem;
+    margin-right: 2rem;
+}
+/* 
+.day:hover {
+  background-color: rgba(153, 200, 136, 1);
+} */
+
+
+
+
