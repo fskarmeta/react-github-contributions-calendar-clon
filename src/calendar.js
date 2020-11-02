@@ -4,8 +4,8 @@ import 'tippy.js/dist/tippy.css'; // optional
 import 'tippy.js/themes/translucent.css';
 
 const Calendar = () => {
-  let daysText = ["Mon", "Wen", "Fri"]
-  let monthText = ["Jan", "Feb", "March", "Apr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"]
+  let daysText = ["Mon", "Wed", "Fri"]
+  let monthText = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dec"]
   let days = [];
   for (let i = 1; i <= 366; i++) {
     let d = new Date(2020, 0, i);
@@ -13,11 +13,14 @@ const Calendar = () => {
       date: d,
       title: d.toLocaleDateString("en-US", { month: "long", day: "numeric" }),
       activity: "test",
-      contributions: 0/*Math.floor((Math.random() * 100))*/,
+      contributions: Math.floor((Math.random() * 100)),
     });
   }
 
   for (let contri of days) {
+    if (contri.contributions === 0) {
+        contri.activity = "level_0"
+    }
       if (contri.contributions > 0 && contri.contributions <= 5) {
           contri.activity = "level_1"
       }
@@ -39,6 +42,11 @@ const Calendar = () => {
   }
 
   const bgColor = (string) => {
+    if (string === "level_0") {
+        return {
+            backgroundColor: "rgb(218, 232, 214)"
+        }
+    }
     if (string === "level_1") {
         return {
             backgroundColor: "#a4fba6"
@@ -46,7 +54,7 @@ const Calendar = () => {
     }
     if (string === "level_2") {
         return {
-            backgroundColor: "#4ae5a"
+            backgroundColor: "#4ae54a"
         }
     }
     if (string === "level_3") {
