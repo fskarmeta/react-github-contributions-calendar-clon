@@ -6,4 +6,4 @@
 
 
 ![Screenshot](./emptycalendar.png)
-![Alt Text](./gif.gif2)
+![Alt Text](./gif.gif2.gif)
