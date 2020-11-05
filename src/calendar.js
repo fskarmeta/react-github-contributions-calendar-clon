@@ -19,41 +19,44 @@ const Calendar = () => {
     "Nov",
     "Dec",
   ]);
-  // const [calendar, changeCalendar] = useState(null);
+  const [calendar, changeCalendar] = useState(calendarGenerator());
 
-  let days = [];
-  for (let i = 1; i <= 366; i++) {
-    let d = new Date(2020, 0, i);
-    days.push({
-      date: d,
-      title: d.toLocaleDateString("en-US", { month: "long", day: "numeric" }),
-      activity: "test",
-      contributions: 0, //Math.floor((Math.random() * 100)),
-    });
-  }
+  function calendarGenerator() {
+    let days = [];
+    for (let i = 1; i <= 366; i++) {
+      let d = new Date(2020, 0, i);
+      days.push({
+        date: d,
+        title: d.toLocaleDateString("en-US", { month: "long", day: "numeric" }),
+        activity: "test",
+        contributions: 0, //Math.floor((Math.random() * 100)),
+      });
+    }
+    for (let contri of days) {
+      if (contri.contributions === 0) {
+        contri.activity = "level_0";
+      }
+      if (contri.contributions > 0 && contri.contributions <= 5) {
+        contri.activity = "level_1";
+      }
+      if (contri.contributions > 5 && contri.contributions <= 10) {
+        contri.activity = "level_2";
+      }
+      if (contri.contributions > 10 && contri.contributions <= 20) {
+        contri.activity = "level_3";
+      }
+      if (contri.contributions > 20 && contri.contributions <= 40) {
+        contri.activity = "level_4";
+      }
+      if (contri.contributions > 40 && contri.contributions <= 70) {
+        contri.activity = "level_5";
+      }
+      if (contri.contributions > 70) {
+        contri.activity = "level_6";
+      }
+    }
 
-  for (let contri of days) {
-    if (contri.contributions === 0) {
-      contri.activity = "level_0";
-    }
-    if (contri.contributions > 0 && contri.contributions <= 5) {
-      contri.activity = "level_1";
-    }
-    if (contri.contributions > 5 && contri.contributions <= 10) {
-      contri.activity = "level_2";
-    }
-    if (contri.contributions > 10 && contri.contributions <= 20) {
-      contri.activity = "level_3";
-    }
-    if (contri.contributions > 20 && contri.contributions <= 40) {
-      contri.activity = "level_4";
-    }
-    if (contri.contributions > 40 && contri.contributions <= 70) {
-      contri.activity = "level_5";
-    }
-    if (contri.contributions > 70) {
-      contri.activity = "level_6";
-    }
+    return days;
   }
 
   const bgColor = (string) => {
@@ -94,7 +97,7 @@ const Calendar = () => {
         ))}
       </div>
       <div className="container">
-        {days.map((e, i) => (
+        {calendar.map((e, i) => (
           <Tippy
             theme="translucent"
             content={e.contributions + " contributions on " + e.title}
