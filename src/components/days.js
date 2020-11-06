@@ -3,7 +3,7 @@ import Tippy from "@tippyjs/react";
 
 const Days = ({ calendar }) => {
   return (
-    <div className="container">
+    <div className="dayscontainer">
       {calendar.map((e, i) => (
         <Tippy
           theme="translucent"

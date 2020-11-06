@@ -8,58 +8,64 @@ export function calendarGenerator() {
       date: d,
       title: d.toLocaleDateString("en-US", { month: "long", day: "numeric" }),
       activity: "test",
-      contributions: Math.floor(Math.random() * 100),
+      contributions: 0, //Math.floor(Math.random() * 100),
     });
   }
-  // Level per contributions
-
-  for (let contri of days) {
-    if (contri.contributions === 0) {
-      contri.activity = "level_0";
-    }
-    if (contri.contributions > 0 && contri.contributions <= 5) {
-      contri.activity = "level_1";
-    }
-    if (contri.contributions > 5 && contri.contributions <= 10) {
-      contri.activity = "level_2";
-    }
-    if (contri.contributions > 10 && contri.contributions <= 20) {
-      contri.activity = "level_3";
-    }
-    if (contri.contributions > 20 && contri.contributions <= 40) {
-      contri.activity = "level_4";
-    }
-    if (contri.contributions > 40 && contri.contributions <= 70) {
-      contri.activity = "level_5";
-    }
-    if (contri.contributions > 70) {
-      contri.activity = "level_6";
-    }
-  }
-
   return days;
 }
 
 // Color per level
 
+let redPallet = [
+  "rgb(253,245,245)",
+  "rgb(247,212,211)",
+  "rgb(244,195,195)",
+  "rgb(241,179,178)",
+  "rgb(236,146,144)",
+  "rgb(230,113,111)",
+  "rgb(224,80,78)",
+  "rgb(218,46,44)",
+];
+
+// let blackPallet = [
+//   "rgb(0,0,0)",
+//   "rgb(194,194,194)",
+//   "rgb(163,163,163)",
+//   "rgb(122,122,122)",
+//   "rgb(82,82,82)",
+//   "rgb(51,51,51)",
+//   "rgb(31,31,31)",
+//   "rgb(0,0,0)",
+// ];
+
+// let greenPallet = [
+//   "rgb(218, 232, 214)",
+//   "#a4fba6",
+//   "#4ae54a",
+//   "#30cb00",
+//   "#0f9200",
+//   "#006203",
+//   "#041501",
+// ];
+
 export function bgColor(string) {
   switch (string) {
     case "level_0":
-      return { backgroundColor: "rgb(218, 232, 214)" };
+      return { backgroundColor: redPallet[0] };
     case "level_1":
-      return { backgroundColor: "#a4fba6" };
+      return { backgroundColor: redPallet[1] };
     case "level_2":
-      return { backgroundColor: "#4ae54a" };
+      return { backgroundColor: redPallet[2] };
     case "level_3":
-      return { backgroundColor: "#30cb00" };
+      return { backgroundColor: redPallet[3] };
     case "level_4":
-      return { backgroundColor: "#0f9200" };
+      return { backgroundColor: redPallet[5] };
     case "level_5":
-      return { backgroundColor: "#006203" };
+      return { backgroundColor: redPallet[6] };
     case "level_6":
-      return { backgroundColor: "#041501" };
+      return { backgroundColor: redPallet[7] };
     default:
-      return { backgroundColor: "white" };
+      return { backgroundColor: "rgb(253,245,245)" };
   }
 }
 

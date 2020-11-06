@@ -1,4 +1,3 @@
-
 .overcontainer {
   /* background-color: rgb(80, 255, 133); */
   height: 10rem;
@@ -8,69 +7,65 @@
   margin: 10rem auto;
 }
 
-
-
-
-
-.container {
+.dayscontainer {
   margin: 5rem auto;
   /* border: 1px solid black;
   background-color: beige; */
-  width:57rem; 
+  width: 57rem;
   height: 7.6rem;
   display: flex;
-  flex-direction:column ;
+  flex-direction: column;
   flex-wrap: wrap;
   align-self: center;
 }
 
-
 .day {
-background-color: rgb(218, 232, 214);
-border: 1px solid rgb(191, 190, 190, 0.2);
-border-radius: 25%;
-height: 0.7em;
-width: 0.7em;
-align-self: center;
-margin: 2px 1px;
+  background-color: rgb(218, 232, 214);
+  border: 1px solid rgb(191, 190, 190, 0.2);
+  border-radius: 25%;
+  height: 0.7em;
+  width: 0.7em;
+  align-self: center;
+  margin: 2px 1px;
 }
 
-
-
-
 .days {
-    /* background-color: lightcyan; */
-    height: 7.6rem;
-    width: 1.7rem;
-    align-self: center;
-    display: flex;
-    flex-direction: column;
+  /* background-color: lightcyan; */
+  height: 7.6rem;
+  width: 1.7rem;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .daystext {
-    font-family: monospace;
- line-height: 3.5;
- font-size: 0.8rem;
- margin-left: 0.2rem;
+  font-family: monospace;
+  line-height: 3.5;
+  font-size: 0.8rem;
+  margin-left: 0.2rem;
 }
-
 
 .monthstext {
   justify-content: space-around;
-    font-family: monospace;
-    position: absolute;
-    width: 54.5rem;
-    /* background-color: lightpink; */
-    display:flex;
-    margin-left: 0rem;
-    font-size: 0.8rem;
-    margin-right: 2rem;
+  font-family: monospace;
+  position: absolute;
+  width: 54.5rem;
+  /* background-color: lightpink; */
+  display: flex;
+  margin-left: 0rem;
+  font-size: 0.8rem;
+  margin-right: 2rem;
 }
 /* 
 .day:hover {
   background-color: rgba(153, 200, 136, 1);
 } */
 
+.nameText {
+  font-size: 1rem;
+  font-weight: bold;
+}
 
-
-
+.dateText {
+  font-size: 0.8rem;
+}
